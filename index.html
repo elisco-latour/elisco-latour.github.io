@@ -5,25 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
      /* Temporary location all the style rules, for development purpose*/
+     body{
+       margin: 0;
+       padding: 0;
+     }
+
+     /*  LAYOUT */
+     .keli-container{
+       max-width: 980px;
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       position: relative;
+     }
+
+     .keli-row{
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: row;
+     }
+
+     .keli-col{
+       padding: 32px;
+       margin: 0;
+     }
+
+     .keli-col--3{
+       width: calc(25% - 64px);
+     }
+
+     .keli-col--9 {
+       width: calc(75% - 64px);
+     }
+
+
+     /* COMPONENTS */
+     header{
+       height: 100vh;
+       background-size: cover;
+       background-position: center top;
+       position: relative;
+     }
+
+     .keli-header__image{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+     }
+
+     .keli-header__beautifier{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(0deg,  #462C1F, rgba(255, 255, 255, .3),  #462C1F);
+     }
+
+     .keli-navigation{
+       width: 100%;
+       text-align: right;
+     }
+
+     .keli-menu__item{
+       text-decoration: none;
+       color: #fff;
+     }
+
+
+
     </style>
   </head>
   <body>
     <header>
-      <!-- Header elements here -->
+      <!-- Header image -->
+      <img class="keli-header__image" src="images/joey-kyber-115166.jpg" alt"an image from unsplash"/>
+      <!-- Header Beautifier -->
+      <div class="keli-header__beautifier"></div>
+      <!-- Header navigation -->
       <div class="keli-container">
         <div class="keli-row">
-          <div class="keli-branding">
-            <a class="keli-branding__link" href="#">
-              <span class="keli-last-name">KPONBLANO</span>
-              <span class="keli-first-name">Koffi Eli</span>
-            </a>
+          <div class="keli-col keli-col--3">
+            <div class="keli-branding">
+              <a class="keli-branding__link" href="#">
+                <span class="keli-last-name">KPONBLANO</span>
+                <span class="keli-first-name">Koffi Eli</span>
+              </a>
+            </div>
           </div>
-          <div class="keli-navigation">
-            <nav role="navigation" aria-labelledby="keli_main_navigation" class="keli-menu">
-              <a class="keli-menu__item" href="#" >portfolio</a>
-              <a class="keli-menu__item" href="#">skills</a>
-              <a class="keli-menu__item" href="#">contact</a>
-            </nav>
+          <div class="keli-col keli-col--9">
+            <div class="keli-navigation">
+              <nav role="navigation" aria-labelledby="keli_main_navigation" class="keli-menu">
+                <a class="keli-menu__item" href="#" >portfolio</a>
+                <a class="keli-menu__item" href="#">skills</a>
+                <a class="keli-menu__item" href="#">contact</a>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
