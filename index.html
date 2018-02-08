@@ -3,11 +3,13 @@
     <title>My personal online PORTFOLIO| Koffi Eli KPONBLANOU</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
      /* Temporary location all the style rules, for development purpose*/
      body{
        margin: 0;
        padding: 0;
+       font-family: 'Open Sans', sans-serif;
      }
 
      /*  LAYOUT */
@@ -38,6 +40,10 @@
        width: calc(75% - 64px);
      }
 
+     .keli-col--12{
+       width: calc(100% - 64px);
+     }
+
 
      /* COMPONENTS */
      header{
@@ -51,23 +57,41 @@
        position: absolute;
        width: 100%;
        height: 100%;
+       object-position: center;
+       object-fit: cover;
+       border: 0;
      }
 
      .keli-header__beautifier{
        position: absolute;
        width: 100%;
        height: 100%;
-       background: linear-gradient(0deg,  #462C1F, rgba(255, 255, 255, .3),  #462C1F);
+       background: linear-gradient(0deg,  #462C1F, rgba(70, 44, 31, .4),  #462C1F);
      }
 
-     .keli-navigation{
+     .keli-top__navigation{
        width: 100%;
-       text-align: right;
+       text-align: center;
      }
 
-     .keli-menu__item{
+     .keli-first-name,
+     .keli-last-name{
+       display: block;
+     }
+
+     .keli-top__navigation .keli-menu__item{
        text-decoration: none;
        color: #fff;
+       text-transform: uppercase;
+       font-size: 1.875em;
+       margin-left: 16px;
+       margin-right: 16px;
+       border-bottom: none;
+       animation: border-bottom .4s ease-in;
+     }
+
+     .keli-top__navigation .keli-menu__item:hover{
+       border-bottom: 2px solid #fff;
      }
 
 
@@ -83,16 +107,8 @@
       <!-- Header navigation -->
       <div class="keli-container">
         <div class="keli-row">
-          <div class="keli-col keli-col--3">
-            <div class="keli-branding">
-              <a class="keli-branding__link" href="#">
-                <span class="keli-last-name">KPONBLANO</span>
-                <span class="keli-first-name">Koffi Eli</span>
-              </a>
-            </div>
-          </div>
-          <div class="keli-col keli-col--9">
-            <div class="keli-navigation">
+          <div class="keli-col keli-col--12">
+            <div class="keli-top__navigation">
               <nav role="navigation" aria-labelledby="keli_main_navigation" class="keli-menu">
                 <a class="keli-menu__item" href="#" >portfolio</a>
                 <a class="keli-menu__item" href="#">skills</a>
