@@ -237,5 +237,32 @@
     <footer>
       <!-- The portfolio footer infos' elements here  -->
     </footer>
+    <script>
+        // get a reference to the portfolio trigger elements and store it in a variable
+        var portfolio_trigger = document.querySelector('#portfolio');
+
+        // Get a refrence to the header a lement and sotre it in a variable
+        var keli_header = document.querySelector('header');
+
+        // Get a reference to the main element and store it in a variable
+        var keli_main = document.querySelector('main');
+
+        // Get a reference to the projects lists wrapper and store it in a variable
+        var keli_project_wrapper = document.querySelector('.keli-projects__list');
+
+        // Get a reference to the navigation and store it in a variable
+        var keli_navigation = document.querySelector('#keli-navigation');
+
+        keli_navigation.addEventListener('click', function(e){
+          e.preventDefault();
+          let current_section = document.querySelector(e.target.getAttribute('href'));
+          showSection(current_section);
+        });
+
+        function showSection( element ) {
+          keli_header.classList.toggle('translate');
+          element.classList.toggle('translate');
+        }
+    </script>
   </body>
 </html>
