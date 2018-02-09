@@ -10,6 +10,8 @@
        margin: 0;
        padding: 0;
        font-family: 'Open Sans', sans-serif;
+       overflow: hidden;
+       background: #462C1F;
      }
 
      /*  LAYOUT */
@@ -85,8 +87,6 @@
        text-transform: uppercase;
        font-size: 1.275rem;
        margin: 16px;
-       border-bottom: none;
-       animation: border-bottom .4s ease-in;
      }
 
      .keli-top__navigation .keli-menu__item:hover{
@@ -132,6 +132,55 @@
        font-size: 1.0em;
      }
 
+     main{
+       background: #462C1F;
+     }
+
+     main.translate {
+       transform: translateY(-233px);
+     }
+
+     .keli-projects__list{
+       padding: 32px 0;
+       text-align: center;
+       width: 80%;
+       margin: auto;
+     }
+
+     .keli-projects__list ul{
+       margin: 0;
+       padding-left: 0;
+     }
+
+     .keli-projects__list ul li{
+       list-style-type: none;
+       color: #fff;
+       margin: 16px 0;
+       font-family: 'Courgette', cursive;
+     }
+
+     .keli-projects__list ul li a{
+       color: #fff;
+     }
+
+     .keli-projects__list h2{
+       margin-top: 0;
+       color: #8E7E7A;
+       text-transform: uppercase;
+       font-size: 1.275em;
+     }
+
+     /* Animate every section that is triggered*/
+     header, .keli-projects__list {
+       transition-property: transform;
+       transition-duration: .2s;
+       transition-timing-function: cubic-bezier(.4,0,.2,1)
+     }
+
+     .translate {
+       transform: translateY(-403px);
+     }
+
     </style>
   </head>
   <body>
@@ -144,36 +193,47 @@
       <div class="keli-container">
         <div class="keli-row">
           <div class="keli-col keli-col--12">
-            <div class="keli-top__navigation">
-              <nav role="navigation" aria-labelledby="keli_main_navigation" class="keli-menu">
-                <a class="keli-menu__item" href="#" >portfolio</a>
-                <a class="keli-menu__item" href="#">skills</a>
-                <a class="keli-menu__item" href="#">contact</a>
-              </nav>
-            </div>
-          </div>
-        </div>
-        <div class="keli-row">
-          <div class="keli-col keli-col--12">
             <section class="keli-hello">
               <div class="keli-hello__content">
                 <div class="keli-hello__title">
                   <h2>Hello <br/> i'am Eli</h2>
                 </div>
                 <div class="keli-hello__description">
-                  <h3>A designer, web and mobile developer</h3>
+                  <h3>A designer, and web developer</h3>
                 </div>
               </div>
             </section>
           </div>
         </div>
-        <div id="keli-portfolio__trigger" class="keli-projects__list-trigger">
-          <u>discover the recent projects on which i have worked</u>
+        <div class="keli-row">
+          <div class="keli-col keli-col--12">
+            <div class="keli-top__navigation">
+              <nav id="keli-navigation" role="navigation" aria-labelledby="keli_main_navigation" class="keli-menu">
+                <a class="keli-menu__item" href="#portfolio" >portfolio</a>
+                <a class="keli-menu__item" href="#skills">skills</a>
+                <a class="keli-menu__item" href="#contact">contact</a>
+              </nav>
+            </div>
+          </div>
         </div>
+        <!-- <div id="keli-portfolio__trigger" class="keli-projects__list-trigger">
+          <u>discover the recent projects on which i have worked</u>
+        </div> -->
       </div>
     </header>
     <main>
       <!-- The portfolio main content elements here-->
+      <div class="keli-container">
+        <section id="portfolio" class="keli-projects__list">
+          <h2> Recent websites i have built for clients</h2>
+          <ul>
+            <li><a href="http://spiralebenin.com" target="_blank">Spirale Benin</a></li>
+            <li><a href="https://afrique-tv.info" target="_blank">Afrique Television</a></li>
+            <li><a href="http://nadcoindustry.com" target="_blank">NAD & CO INDUSTRY</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
     <footer>
       <!-- The portfolio footer infos' elements here  -->
     </footer>
