@@ -17,6 +17,7 @@
      /*  LAYOUT */
      .keli-container{
        max-width: 980px;
+       width: 100%;
        display: block;
        margin-left: auto;
        margin-right: auto;
@@ -73,7 +74,7 @@
 
      .keli-top__navigation{
        width: 100%;
-       text-align: center;
+       margin-top: 64px;
      }
 
      .keli-first-name,
@@ -85,8 +86,9 @@
        text-decoration: none;
        color: #fff;
        text-transform: uppercase;
-       font-size: 1.275rem;
-       margin: 16px;
+       font-size: 1.075rem;
+       font-weight: bold;
+       margin: 16px 16px 16px 0;
        display: inline-block;
      }
 
@@ -95,11 +97,7 @@
      }
 
      .keli-hello{
-       background-color: #576C30;
        color: #fff;
-       text-align: center;
-       padding: 32px;
-       margin: auto;
        margin-top: 76px;
        width: 200px;
        height: 200px;
@@ -138,17 +136,13 @@
        position: relative;
      }
 
-     main.translate {
-       transform: translateY(-233px);
-     }
-
      .keli-section{
-       padding: 32px 0;
-       text-align: center;
+       padding: 16px 0;
        width: 80%;
        margin: auto;
        position: absolute;
-       left: 10%;
+       top: 0;
+       /*left: 5%;*/
      }
 
      .keli-section ul{
@@ -160,47 +154,87 @@
        list-style-type: none;
        color: #fff;
        margin: 16px 0;
-       font-family: 'Courgette', cursive;
      }
 
      .keli-section ul li a{
        color: #fff;
-       font-size: 1.3em;
+       font-size: 1.0em;
+       text-decoration: none;
      }
 
      .keli-section h2{
        margin-top: 0;
+       padding-bottom: 32px;
        color: #8E7E7A;
        text-transform: uppercase;
-       font-size: 1.475em;
+       font-size: 1.375em;
+       border-bottom: 1px solid #8E7E7A;
      }
 
      .keli-section h3{
        color: #8E7E7A;
+       font-size: 1.175em;
+       margin-bottom: 8px;
      }
 
      .keli-section p{
        color: #fff;
-       font-family: 'Courgette', cursive;
-       font-size: 1.3em;
+       margin-bottom: 32px;
+       margin-top: 8px;
      }
 
      #contact a {
        text-decoration: none;
        color: #fff;
-       font-size: 1.5em;
        font-family: 'Courgette', cursive;
+       font-size: 1.3em;
      }
 
-     /* Animate every section that is triggered*/
+     footer{
+       width: 100%;
+       position: absolute;
+       bottom: 0;
+       color: #fff;
+     }
+
+     footer p{
+       font-size: 0.875em;
+       margin: 0;
+     }
+
+     .keli-view__reset{
+       width: 64px;
+       height: 64px;
+       position: absolute;
+       top: 20%;
+       left: 50%;
+       border-radius: 50%;
+       transform: translateX(-50%);
+       opacity: 0;
+
+       transition-property: opacity;
+       transition-duration: .2s;
+       transition-timing-function: cubic-bezier(.4,0,.2,1);
+     }
+
+     .keli-view__reset.is-visible{
+       opacity: 1;
+     }
+
+     .keli-view__reset img{
+       max-width: 100%;
+       width: 100%;
+     }
+
+     /* Animation Rules here*/
      header, .keli-section {
        transition-property: transform;
        transition-duration: .2s;
-       transition-timing-function: cubic-bezier(.4,0,.2,1)
+       transition-timing-function: ease-in;
      }
 
      .translate {
-       transform: translateY(-393px);
+       transform: translateY(-433px);
      }
 
     </style>
@@ -208,7 +242,7 @@
   <body>
     <header>
       <!-- Header image -->
-      <img class="keli-header__image" src="images/joey-kyber-115166.jpg" alt"an image from unsplash"/>
+      <img class="keli-header__image" src="images/joey-kyber-115166-min.jpg" alt"an image from unsplash"/>
       <!-- Header Beautifier -->
       <div class="keli-header__beautifier"></div>
       <!-- Header navigation -->
@@ -238,38 +272,58 @@
             </div>
           </div>
         </div>
-        <!-- <div id="keli-portfolio__trigger" class="keli-projects__list-trigger">
-          <u>discover the recent projects on which i have worked</u>
-        </div> -->
       </div>
     </header>
     <main>
       <!-- The portfolio main content elements here-->
       <div class="keli-container">
-        <section id="portfolio" class="keli-section keli-projects__list">
-          <h2>Recent websites i have built for clients</h2>
-          <ul>
-            <li><a href="http://spiralebenin.com" target="_blank">Spirale Benin</a></li>
-            <li><a href="https://afrique-tv.info" target="_blank">Afrique Television</a></li>
-            <li><a href="http://nadcoindustry.com" target="_blank">NAD & CO INDUSTRY</a></li>
-          </ul>
-        </section>
-        <section class="keli-section" id="skills">
-          <h2>My skills' area and tools that i use</h2>
-          <h3><u>Programming</u></h3>
-          <p>HTML,&nbsp; CSS,&nbsp; PHP,&nbsp; JavaScript,&nbsp; Java,&nbsp; JavaFX,&nbsp; SQL(MySQL)</p>
-          <h3><u>Web and Graphic Design</u></h3>
-          <p>Adobe Photoshop,&nbsp; Adobe InDesign,&nbsp; Adobe Illustrator</p>
-        </section>
-        <section class="keli-section" id="contact">
-          <h2>Get in touch with me</h2>
-          <a href="mailto:eliscolatour@gmail.com"><u>Send me an email</u></a>
-        </section>
+        <div class="keli-row">
+          <div class="keli-col keli-col--12">
+            <section id="portfolio" class="keli-section keli-projects__list">
+              <h2>Recent websites i have built for clients</h2>
+              <ul>
+                <li><a href="http://spiralebenin.com" target="_blank">&rarr;&nbsp;	Spirale Benin</a></li>
+                <li><a href="https://afrique-tv.info" target="_blank">&rarr;&nbsp;	Afrique Television</a></li>
+                <li><a href="http://nadcoindustry.com" target="_blank">&rarr;&nbsp;	NAD & CO INDUSTRY</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div class="keli-row">
+          <div class="keli-col keli-col--12">
+            <section class="keli-section" id="skills">
+              <h2>My skills' area and tools that i use</h2>
+              <h3>&there4; &nbsp; Programming</h3>
+              <p>HTML,&nbsp; CSS,&nbsp; PHP,&nbsp; JavaScript,&nbsp; Java,&nbsp; JavaFX,&nbsp; SQL(MySQL)</p>
+              <h3>&there4; &nbsp;Web and Graphic Design</h3>
+              <p>Adobe Photoshop,&nbsp; Adobe InDesign,&nbsp; Adobe Illustrator</p>
+            </section>
+          </div>
+        </div>
+        <div class="keli-row">
+          <div class="keli-col keli-col--12">
+            <section class="keli-section" id="contact">
+              <h2>Get in touch with me</h2>
+              <a href="mailto:eliscolatour@gmail.com">Send me an email &nbsp; &hearts;</a>
+            </section>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
       <!-- The portfolio footer infos' elements here  -->
+      <div class="keli-container">
+        <div class="keli-row">
+          <div class="keli-col keli-col--12">
+            <p>&copy Koffi Eli KPONBLANOU 2018
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@jtkyber1?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Joey Kyber"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Joey Kyber</span></a>
+          </p>
+          </div>
+      </div>
     </footer>
+    <div id="reset_view" class="keli-view__reset">
+      <img src="images/arrow-up.png" title="Return to top"/>
+    </div>
     <script>
         // Get a refrence to the header a lement and sotre it in a variable
         var keli_header = document.querySelector('header');
@@ -279,6 +333,9 @@
 
         // Get a reference to the navigation and store it in a variable
         var keli_navigation = document.querySelector('#keli-navigation');
+
+        // Get a reference to the view reset trigger and store it in a variable
+        var keli_view_reset = document.querySelector('#reset_view');
 
         keli_navigation.addEventListener('click', function(e){
           e.preventDefault();
@@ -295,7 +352,26 @@
             }
           }
           keli_header.classList.add('translate');
-          element.classList.add('translate');
+          keli_view_reset.classList.add('is-visible');
+          if( element){
+            element.classList.add('translate');
+          }
+        }
+
+        keli_view_reset.addEventListener('click', function(){
+          resetView();
+        });
+
+        function resetView() {
+          keli_header.classList.remove('translate');
+          var menu_items = document.querySelectorAll('nav a');
+          for( let i=0; i < menu_items.length; ++i ){
+            let elementTarget = document.querySelector(menu_items[i].getAttribute('href'));
+            if(elementTarget.classList.contains('translate')){
+              elementTarget.classList.remove('translate');
+            }
+          }
+          keli_view_reset.classList.remove('is-visible');
         }
     </script>
   </body>
