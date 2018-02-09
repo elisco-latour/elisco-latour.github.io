@@ -87,6 +87,7 @@
        text-transform: uppercase;
        font-size: 1.275rem;
        margin: 16px;
+       display: inline-block;
      }
 
      .keli-top__navigation .keli-menu__item:hover{
@@ -134,51 +135,72 @@
 
      main{
        background: #462C1F;
+       position: relative;
      }
 
      main.translate {
        transform: translateY(-233px);
      }
 
-     .keli-projects__list{
+     .keli-section{
        padding: 32px 0;
        text-align: center;
        width: 80%;
        margin: auto;
+       position: absolute;
+       left: 10%;
      }
 
-     .keli-projects__list ul{
+     .keli-section ul{
        margin: 0;
        padding-left: 0;
      }
 
-     .keli-projects__list ul li{
+     .keli-section ul li{
        list-style-type: none;
        color: #fff;
        margin: 16px 0;
        font-family: 'Courgette', cursive;
      }
 
-     .keli-projects__list ul li a{
+     .keli-section ul li a{
        color: #fff;
+       font-size: 1.3em;
      }
 
-     .keli-projects__list h2{
+     .keli-section h2{
        margin-top: 0;
        color: #8E7E7A;
        text-transform: uppercase;
-       font-size: 1.275em;
+       font-size: 1.475em;
+     }
+
+     .keli-section h3{
+       color: #8E7E7A;
+     }
+
+     .keli-section p{
+       color: #fff;
+       font-family: 'Courgette', cursive;
+       font-size: 1.3em;
+     }
+
+     #contact a {
+       text-decoration: none;
+       color: #fff;
+       font-size: 1.5em;
+       font-family: 'Courgette', cursive;
      }
 
      /* Animate every section that is triggered*/
-     header, .keli-projects__list {
+     header, .keli-section {
        transition-property: transform;
        transition-duration: .2s;
        transition-timing-function: cubic-bezier(.4,0,.2,1)
      }
 
      .translate {
-       transform: translateY(-403px);
+       transform: translateY(-393px);
      }
 
     </style>
@@ -224,13 +246,24 @@
     <main>
       <!-- The portfolio main content elements here-->
       <div class="keli-container">
-        <section id="portfolio" class="keli-projects__list">
-          <h2> Recent websites i have built for clients</h2>
+        <section id="portfolio" class="keli-section keli-projects__list">
+          <h2>Recent websites i have built for clients</h2>
           <ul>
             <li><a href="http://spiralebenin.com" target="_blank">Spirale Benin</a></li>
             <li><a href="https://afrique-tv.info" target="_blank">Afrique Television</a></li>
             <li><a href="http://nadcoindustry.com" target="_blank">NAD & CO INDUSTRY</a></li>
           </ul>
+        </section>
+        <section class="keli-section" id="skills">
+          <h2>My skills' area and tools that i use</h2>
+          <h3><u>Programming</u></h3>
+          <p>HTML,&nbsp; CSS,&nbsp; PHP,&nbsp; JavaScript,&nbsp; Java,&nbsp; JavaFX,&nbsp; SQL(MySQL)</p>
+          <h3><u>Web and Graphic Design</u></h3>
+          <p>Adobe Photoshop,&nbsp; Adobe InDesign,&nbsp; Adobe Illustrator</p>
+        </section>
+        <section class="keli-section" id="contact">
+          <h2>Get in touch with me</h2>
+          <a href="mailto:eliscolatour@gmail.com"><u>Send me an email</u></a>
         </section>
       </div>
     </main>
@@ -238,17 +271,11 @@
       <!-- The portfolio footer infos' elements here  -->
     </footer>
     <script>
-        // get a reference to the portfolio trigger elements and store it in a variable
-        var portfolio_trigger = document.querySelector('#portfolio');
-
         // Get a refrence to the header a lement and sotre it in a variable
         var keli_header = document.querySelector('header');
 
         // Get a reference to the main element and store it in a variable
         var keli_main = document.querySelector('main');
-
-        // Get a reference to the projects lists wrapper and store it in a variable
-        var keli_project_wrapper = document.querySelector('.keli-projects__list');
 
         // Get a reference to the navigation and store it in a variable
         var keli_navigation = document.querySelector('#keli-navigation');
@@ -260,8 +287,15 @@
         });
 
         function showSection( element ) {
-          keli_header.classList.toggle('translate');
-          element.classList.toggle('translate');
+          var menu_items = document.querySelectorAll('nav a');
+          for( let i=0; i < menu_items.length; ++i ){
+            let elementTarget = document.querySelector(menu_items[i].getAttribute('href'));
+            if(elementTarget.classList.contains('translate')){
+              elementTarget.classList.remove('translate');
+            }
+          }
+          keli_header.classList.add('translate');
+          element.classList.add('translate');
         }
     </script>
   </body>
