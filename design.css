@@ -203,6 +203,7 @@ footer p{
   border-radius: 50%;
   transform: translateX(-50%);
   opacity: 0;
+  cursor: pointer;
 
   transition-property: opacity;
   transition-duration: .2s;
