@@ -130,7 +130,7 @@ main{
 
 .keli-section{
   padding: 16px 0;
-  width: 80%;
+  width: calc(100% - 64px);
   margin: auto;
   position: absolute;
   top: 0;
