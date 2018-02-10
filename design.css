@@ -134,7 +134,13 @@ main{
   margin: auto;
   position: absolute;
   top: 0;
-  /*left: 5%;*/
+}
+
+@media screen and (max-width: 425px){
+  .keli-section{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
 }
 
 .keli-section ul{
