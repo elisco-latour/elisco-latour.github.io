@@ -24,10 +24,11 @@ function showSection( element ) {
       elementTarget.classList.remove('translate');
     }
   }
-  keli_header.classList.add('translate');
-  keli_view_reset.classList.add('is-visible');
+
   if( element){
-    element.classList.add('translate');
+      keli_header.classList.add('translate');
+      keli_view_reset.classList.add('is-visible');
+      element.classList.add('translate');
   }
 }
 
