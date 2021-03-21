@@ -6,7 +6,7 @@ body{
   background: #462C1F;
 }
 
-keli-page__wrapper{
+.keli-page__wrapper{
   position: relative;
   heigt: 100vh;
   width: 100vw;
